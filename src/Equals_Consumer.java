@@ -18,8 +18,7 @@ public class Equals_Consumer extends EqualsTest {
             }
             if ((obj instanceof Equals_Consumer)) {
                 EqualsTest anotherPhone = (Equals_Consumer) obj;
-                this.getModel_Name().equals(anotherPhone.getModel_Name());
-                return true;
+                return this.getModel_Name().equals(anotherPhone.getModel_Name());
             } else {
                 return false;
             }
