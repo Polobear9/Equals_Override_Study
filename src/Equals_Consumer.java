@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.operations.Equals;
+
 public class Equals_Consumer extends EqualsTest {
 
     public Equals_Consumer(String model_Name, String model_Number, String serial_Number) {
@@ -8,7 +10,20 @@ public class Equals_Consumer extends EqualsTest {
     // for consumer equals method
     @Override
     public boolean equals(Object obj) {
-        return true;
+        if (this == obj) {
+            return true;
+        } else {
+            if (obj == null) {
+                return false;
+            }
+            if ((obj instanceof Equals_Consumer)) {
+                EqualsTest anotherPhone = (Equals_Consumer) obj;
+                this.getModel_Name().equals(anotherPhone.getModel_Name());
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
 }
